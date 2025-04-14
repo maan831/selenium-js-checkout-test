@@ -1,0 +1,138 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2025-04-14T08:29:17.959Z",
+    "end": "2025-04-14T08:29:20.003Z",
+    "duration": 2044,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "48e2733e-cd07-4f05-ae74-523a9e0fbc53",
+      "title": "",
+      "fullFile": "C:\\Users\\RWIT\\selenium-js-ecommerce\\test\\checkouttest.js",
+      "file": "\\test\\checkouttest.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "d81d3e24-841d-46b3-881d-650ff3a88e4d",
+          "title": "E-commerce Checkout Flow",
+          "fullFile": "C:\\Users\\RWIT\\selenium-js-ecommerce\\test\\checkouttest.js",
+          "file": "\\test\\checkouttest.js",
+          "beforeHooks": [
+            {
+              "title": "\"before all\" hook in \"E-commerce Checkout Flow\"",
+              "fullTitle": "E-commerce Checkout Flow \"before all\" hook in \"E-commerce Checkout Flow\"",
+              "timedOut": false,
+              "duration": 6,
+              "state": null,
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "driver =  getDriver();\nloginpage = new LoginPage(driver);\nproductspage = new ProductsPage(driver);\ncartpage = new CartPage(driver);\ncheckoutPage = new CheckoutPage(driver);",
+              "err": {},
+              "uuid": "dedf226d-0b40-49c7-a28e-d49b15d2f636",
+              "parentUUID": "d81d3e24-841d-46b3-881d-650ff3a88e4d",
+              "isHook": true,
+              "skipped": false
+            }
+          ],
+          "afterHooks": [
+            {
+              "title": "\"after all\" hook in \"E-commerce Checkout Flow\"",
+              "fullTitle": "E-commerce Checkout Flow \"after all\" hook in \"E-commerce Checkout Flow\"",
+              "timedOut": false,
+              "duration": 55,
+              "state": null,
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "await driver.quit();",
+              "err": {},
+              "uuid": "b6fbbdaf-efd7-4812-90de-d6fece21804c",
+              "parentUUID": "d81d3e24-841d-46b3-881d-650ff3a88e4d",
+              "isHook": true,
+              "skipped": false
+            }
+          ],
+          "tests": [
+            {
+              "title": "should complete checkout successfully",
+              "fullTitle": "E-commerce Checkout Flow should complete checkout successfully",
+              "timedOut": false,
+              "duration": 1948,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "await loginpage.open();\nawait loginpage.login('standard_user', 'secret_sauce');\nawait productspage.addToCart('Sauce Labs Backpack');\nawait productspage.goToCart();\nawait cartpage.proceedToCheckout();\nawait checkoutPage.fillCheckoutForm('manmeet', 'singh', '12345');\nawait checkoutPage.finishCheckout();\nconst message = await checkoutPage.getSuccessMessage();\nexpect(message).to.equal('Thank you for your order!');",
+              "err": {},
+              "uuid": "03cf53ef-72e2-47b8-a1ea-1c57ef39643c",
+              "parentUUID": "d81d3e24-841d-46b3-881d-650ff3a88e4d",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "03cf53ef-72e2-47b8-a1ea-1c57ef39643c"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 1948,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 30000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "11.1.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": null,
+      "version": "6.2.0"
+    }
+  }
+}
